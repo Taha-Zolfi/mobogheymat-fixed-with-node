@@ -1,12 +1,77 @@
-.cards {
-    display: grid;
-    row-gap: 1rem;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 2rem;
+/* cards.css */
 
-}
-.con{display: flex;justify-content: center;background-color: #000;padding-bottom: 3rem;}
-
-@media (orientation : portrait) {
-    .cards{ grid-template-columns: auto auto;}
-}
+/* Dark theme styles */
+.con {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #121212; /* Dark background for the container */
+  }
+  
+  .cards {
+    /* max-width: 1200px; */
+    width: 90%;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .product {
+    background: #1e1e1e; /* Darker card background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for dark theme */
+    overflow: hidden;
+    width: calc(25% - 20px); /* Adjust based on how many cards per row */
+    transition: transform 0.3s;
+    color: #e0e0e0; /* Light text color */
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 150px; /* Set a maximum height for the image */
+    object-fit: contain; /* Ensures the image scales proportionally without clipping */
+  }
+  
+  .product h2, .product p {
+    font-size: 1rem;
+    margin: 10px;
+  }
+  
+  .product h2 {
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Light text color for the title */
+  }
+  
+  .product p {
+    color: #b0b0b0; /* Slightly lighter text color for price */
+  }
+  
+  .product:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .product {
+      width: calc(33.33% - 20px); /* 3 cards per row */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .product {
+      width: calc(50% - 20px); /* 2 cards per row */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .product {
+      width: 100%; /* 1 card per row */
+    }
+  }
+  
