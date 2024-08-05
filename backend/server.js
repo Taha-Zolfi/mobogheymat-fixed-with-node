@@ -1,12 +1,11 @@
 const express = require('express');
-const cors = require('cors');  // اضافه کردن cors
+const cors = require('cors');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
 const app = express();
 const port = 5000;
 
-// استفاده از middleware cors
 app.use(cors());
 
 app.get('/api/products', async (req, res) => {
